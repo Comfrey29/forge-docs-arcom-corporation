@@ -1,1 +1,13 @@
+services:
+  - type: web
+    name: forge-docs
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python run.py
+    envVars:
+      - key: FLASK_ENV
+        value: production
+    autoDeploy: true
+    instanceType: s
 
